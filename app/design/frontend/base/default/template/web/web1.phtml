@@ -1,0 +1,100 @@
+<?php
+require_once('js/pack/recaptchalib.php');
+require("js/pack/class.PHPMailer.php");
+require("js/pack/PHPMailerAutoload.php");
+require("js/pack/class.smtp.php");
+
+$model = Mage::getModel('web/web')->load('web_id');
+        $data = $model->getData();
+        $collection = Mage::getModel('web/web')->getCollection();
+		$keys = array_keys($collection->getFirstItem()->getData());
+		
+		foreach ($keys as $key)
+		{ 														// loop through all the keys (fname, lname, email... 
+			foreach ($collection as $obj)
+			{													//loop throught each object 
+				//print_r($obj->getData($key));					//get the value for a speficic key. 
+				//echo "<br>";
+			}
+					
+		}
+	
+		$email_val = $obj->getData('email_val');
+		$captcha = $obj->getData('en_recaptcha');
+		
+
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+$email = $_POST['email'];
+$mob = $_POST['mob'];
+$msg = $_POST['msg'];
+$smtp = $_POST['smtp'];
+$port = $_POST['port'];
+$user = $_POST['user'];
+$pass = $_POST['pass'];
+$smsg = $_POST['smsg'];
+$emsg = $_POST['emsg'];
+$prkey = $_POST['prkey'];
+$bcc = $_POST['bcc'];
+$subject = $_POST['subject'];
+$autorply = $_POST['autorply'];
+$to_address = $_POST['to_address'];
+$from_address = $_POST['from_address'];
+$challengeField = $_POST['ch'];
+$responseField = $_POST['rp'];
+$wrongcap = $_POST['wrongcap'];
+
+if($captcha == 1)
+{
+	$privatekey = $prkey;
+	$resp = recaptcha_check_answer ($privatekey,
+                                $_SERVER["REMOTE_ADDR"],
+                                $challengeField,
+                                $responseField);
+	
+	 if (!$resp->is_valid) {
+		// What happens when the CAPTCHA was entered incorrectly
+		die ("<div style='margin-left:30px;height:60px;width:500px;background: none repeat scroll 0% 0% #FF9494;padding: 15px;color: #000;border: 1px solid red;'>". $wrongcap . "(reCAPTCHA said: " . $resp->error . ")");
+	} else{
+			//echo "correct captcha";
+		}
+}
+$mail = new PHPMailer();
+$mail->IsSMTP();         // set mailer to use SMTP
+$mail->Host = $smtp;  // specify main and backup server
+$mail->Port = $port;   
+$mail->SMTPAuth = true;     // turn on SMTP authentication
+$mail->SMTPSecure = "tls";  
+$mail->Username = $user;  // SMTP username
+$mail->Password = $pass; // SMTP password
+if($email_val == 1)
+	$mail->FromName = $email;
+else
+	$mail->FromName = $from_address;
+
+$mail->From = $email;
+$mail->AddAddress($to_address);
+$mail->addCC($bcc);          
+$mail->AddReplyTo($autorply, "Information");
+
+$mail->WordWrap = 50;                                 // set word wrap to 50 characters
+$mail->IsHTML(true);                                  // set email format to HTML
+$mail->Subject = $subject;
+$body  = 'First Name : '.$fname.'<br>'.'Last Name : '.$lname.'<br>'.'Mobile Number : '.$mob.'<br>'.'Message : '.$msg;
+$mail->MsgHTML($body);
+$mail->AltBody = "This is the body in plain text for non-HTML mail clients";
+
+if(!$mail->Send())
+{
+   echo '<div style="margin-left:30px;height:60px;width:500px;background: none repeat scroll 0% 0% #FF9494;padding: 15px;color: #000;border: 1px solid red;">
+    <b>'.$emsg.' "'.$mail->ErrorInfo.'"</b>
+	</div>';
+  
+   exit;
+}
+
+echo '<div style="margin-left:30px;height:50px;width:500px;background: none repeat scroll 0% 0% #CFE2F3;padding: 15px;color: #000;border: 1px solid #197BAF;">
+    <b>'.$smsg.'</b>
+	</div>';
+
+?>

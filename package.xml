@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+    <name>ContactUs_Free</name>
+    <version>1.0.0.1</version>
+    <stability>stable</stability>
+    <license uri="www.softechworld.com">Softechworld</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>contact us extension</summary>
+    <description>This extension helps you to manage all fields whichever needed for contact us.&#xD;
+You can directly set fields as compulsory or optional from admin section</description>
+    <notes>This is an stable version.</notes>
+    <authors><author><name>Softechworld</name><user>STW</user><email>info@softechworld.com</email></author></authors>
+    <date>2014-11-05</date>
+    <time>10:24:46</time>
+    <contents><target name="mage"><dir name="."><dir name="app"><dir name="code"><dir name="local"><dir name="Company"><dir name="Web"><dir name="Block"><dir name="Adminhtml"><dir name="Web"><dir name="Edit"><file name="Form.php" hash="db8db7ce94668d66e5f8adaa0153417d"/><dir name="Tab"><file name="Form.php" hash="78b26c9e7ecd6897496807d70d0c77b2"/><file name="Form1.php" hash="df44a4052a175910fa62c859db3a555f"/><file name="Form2.php" hash="f8304334e5659bcc21095de35d9be6a4"/><file name="Form3.php" hash="c38dece0dea164c36dc3f7cc6cf2f2c7"/></dir><file name="Tabs.php" hash="a084588fe11cc1fb24fce8775917dec4"/></dir><file name="Edit.php" hash="23d49a3af533e5f3bd779795fee6356a"/><file name="Grid.php" hash="559fd463d903e36ef847ebbb5d6978b2"/></dir><file name="Web.php" hash="b6256b48f49de3b3fc928dc0ebd7254d"/></dir><file name="Web.php" hash="ee4ee162f794296724ee4fe1ca76a5b0"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="WebController.php" hash="a5c2681b095f7634036e732c68910ca8"/></dir><file name="AjaxController.php" hash="2ac8ec02a890849f4d8278cdc5be9910"/><file name="IndexController.php" hash="ab7b236a977106daf8c1d88a8c17f641"/></dir><dir name="etc"><file name="adminhtml.xml" hash="66cadb6f0e9d8c71310669e391408456"/><file name="config.xml" hash="759f38528016509a1f0b24c90cfc9f96"/></dir><dir name="Helper"><file name="Data.php" hash="c53f7434ab511c59d3a23c973d55fd92"/></dir><dir name="Model"><dir name="Mysql4"><dir name="Web"><file name="Collection.php" hash="01fd20807bb00f483614f4d7d8ee4e0d"/></dir><file name="Web.php" hash="0dc6da898926c8227d64ac16ede3dafc"/></dir><file name="Status.php" hash="b23fbdcb4d49e95cf53184b57d66274f"/><file name="Web.php" hash="82eed865adf6b8c323f1624a34a9a466"/></dir><dir name="sql"><dir name="web_setup"><file name="mysql4-install-0.1.0.php" hash="dd98199c5f08fadb28227747659b0e6b"/></dir></dir></dir></dir></dir></dir><dir name="etc"><dir name="modules"><file name="Company_Web.xml" hash="102b0981f1e5b80ec434445eb015c8d6"/></dir></dir><dir name="design"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="web.xml" hash="892d1ea0b425e3d821fe9e00f34c70be"/></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="web.xml" hash="f95bb509ba7864a45ce75c3794be5958"/></dir><dir name="template"><dir name="web"><file name="web.phtml" hash="959cb608088acfeab7a67241b5f7a26f"/><file name="web1.phtml" hash="bd722328f115fd99acb316c31ca6671a"/></dir></dir></dir></dir></dir></dir></dir><dir name="js"><dir name="pack"><file name="PHPMailerAutoload.php" hash="afa2b6a11650a9ea43052e9a35429747"/><file name="class.phpmailer.php" hash="05858e3cfe2fcfa193fe1eafded0a407"/><file name="class.smtp.php" hash="cedca24273d6b541537662c6f5cde57f"/><file name="jquery-1.10.2.js" hash="7b89c0e044ada39b40994cccce1a3c3a"/><file name="recaptchalib.php" hash="b206569ed973563107c29902ca7ab35b"/><file name="support.php" hash="0ba5824f31770cfca64cd5dedd2d6598"/><file name="web.css" hash="78555af990f8b9fe8104fef63a982546"/></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

@@ -1,0 +1,28 @@
+#cont_tab tr td
+{
+	text-align:right;
+	padding:7px;
+}
+
+#front tr td
+{
+	padding:2px;
+}
+
+#front label
+{
+	font-family:calibri;
+	font-size:15px;
+}
+
+#front input[type=text],input[type=tele],textarea
+{
+	color: black;
+	font-family:cambria;
+		
+}
+
+#front input[type=tele]
+{
+	padding:5px;
+}
