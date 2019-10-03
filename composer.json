@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/ContactUs_Free",
+    "name": "OpenMageModuleFostering\/ContactUs_Free",
     "type": "magento-module",
     "license": "Softechworld",
     "homepage": "",
     "description": "contact us extension",
     "authors": [
-    {
-        "name": "Softechworld",
-        "email": "info@softechworld.com"
-    }
-],
+        {
+            "name": "Softechworld",
+            "email": "info@softechworld.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
